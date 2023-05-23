@@ -1,0 +1,14 @@
+<h1>Edit Task</h1>
+
+<%= form_with(model: @task, url: task_path(@task), method: :patch, local: true) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :details %>
+  <%= form.text_area :details %>
+
+  <%= form.label :completed %>
+  <%= form.check_box :completed %>
+
+  <%= form.submit %>
+<% end %>

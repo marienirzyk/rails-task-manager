@@ -1,0 +1,13 @@
+<h1>All Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.title %></td>
+    <td><%= task.details %></td>
+    <td><%= task.completed %></td>
+    <td>
+      <%= link_to 'Edit', edit_task_path(task), class: 'btn btn-primary' %>
+      <%= link_to 'Delete', delete_task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class: 'btn btn-danger' %>
+    </td>
+  </tr>
+<% end %>
